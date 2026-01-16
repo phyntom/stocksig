@@ -13,7 +13,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { LogOut, LogOutIcon } from "lucide-react";
+import { ArrowBigDown, ChevronDown, LogOut, LogOutIcon } from "lucide-react";
 
 const UserDropdown = () => {
   const router = useRouter();
@@ -41,9 +41,10 @@ const UserDropdown = () => {
             </AvatarFallback>
           </Avatar>
           <div className="hidden flex-col items-start md:flex">
-            <span className="text-base font-medium text-gray-400">
+            {/* <span className="text-base font-medium text-gray-400">
               {user.name.charAt(0)}
-            </span>
+            </span> */}
+            <ChevronDown className="h-4 w-4" />
           </div>
         </Button>
       </DropdownMenuTrigger>

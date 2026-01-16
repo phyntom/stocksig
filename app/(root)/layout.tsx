@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import React from "react";
 
 interface LayoutProps {
@@ -5,7 +6,12 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  return <main>{children}</main>;
+  return (
+    <main className="min-h-screen text-gray-400">
+      <Header />
+      <div className="container py-10">{children}</div>
+    </main>
+  );
 }
 
 export default Layout;

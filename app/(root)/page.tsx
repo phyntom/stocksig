@@ -1,9 +1,53 @@
-import { Button } from "@/components/ui/button";
+import TradingViewWidget from '@/components/TradingViewWidget';
+import { Button } from '@/components/ui/button';
+import {
+  MARKET_DATA_WIDGET_CONFIG,
+  MARKET_OVERVIEW_WIDGET_CONFIG,
+  TOP_STORIES_WIDGET_CONFIG,
+} from '@/lib/constants';
 
 export default function Home() {
+  const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`;
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Button>Click Me</Button>
+    <div className="home-wrapper flex min-h-screen">
+      <section className="home-section grid w-full gap-6">
+        <div className="md:col-span-1 xl:col-span-1 2xl:col-span-2">
+          <TradingViewWidget
+            title="Market Overview"
+            scriptUrl={`${scriptUrl}market-overview.js`}
+            config={MARKET_OVERVIEW_WIDGET_CONFIG}
+            className="custom-chart"
+            height={600}
+          />
+        </div>
+        <div className="md:col-span-1 xl:col-span-1">
+          <TradingViewWidget
+            title="Stock Heatmap"
+            scriptUrl={`${scriptUrl}stock-heatmap.js`}
+            config={MARKET_OVERVIEW_WIDGET_CONFIG}
+            height={600}
+          />
+        </div>
+      </section>
+      <section className="home-section grid w-full gap-6">
+        <div className="h-full md:col-span-1 xl:col-span-1">
+          <TradingViewWidget
+            title="Market Overview"
+            scriptUrl={`${scriptUrl}timeline.js`}
+            config={TOP_STORIES_WIDGET_CONFIG}
+            className="custom-chart"
+            height={600}
+          />
+        </div>
+        <div className="h-full md:col-span-1 xl:col-span-2">
+          <TradingViewWidget
+            title="Stock Heatmap"
+            scriptUrl={`${scriptUrl}market-quotes.js`}
+            config={MARKET_DATA_WIDGET_CONFIG}
+            height={600}
+          />
+        </div>
+      </section>
     </div>
   );
 }

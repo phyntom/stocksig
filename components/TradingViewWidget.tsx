@@ -2,6 +2,7 @@
 import useTradingViewWidget from '@/hooks/useTradingViewWidget';
 import { cn } from '@/lib/utils';
 import { memo } from 'react';
+import isEqual from 'lodash/isEqual';
 
 interface TradingViewWidgetProps {
   title?: string;
@@ -41,4 +42,6 @@ function TradingViewWidget({
   );
 }
 
-export default memo(TradingViewWidget);
+export default memo(TradingViewWidget, (prevProps, nextProp) => {
+  return isEqual(prevProps, nextProp);
+});

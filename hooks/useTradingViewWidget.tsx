@@ -1,5 +1,5 @@
-"use client";
-import { useRef, useEffect } from "react";
+'use client';
+import { useRef, useEffect } from 'react';
 
 const useTradingViewWidget = (
   scriptUrl: string,
@@ -11,17 +11,17 @@ const useTradingViewWidget = (
   useEffect(() => {
     if (!containerRef.current) return;
     if (containerRef.current.dataset.loaded) return;
-    containerRef.current.innerHTML = `<div class="tradingview-widget-container__widget" style="width:100%; height: ${height}px;"></div>`;
-    const script = document.createElement("script");
+    containerRef.current.innerHTML = `<div class="tradingview-widget-container__widget" style="width: 100%; height: ${height}px;"></div>`;
+    const script = document.createElement('script');
     script.src = scriptUrl;
-    script.type = "text/javascript";
+    script.type = 'text/javascript';
     script.async = true;
     script.innerHTML = JSON.stringify(config);
     containerRef.current.appendChild(script);
 
     () => {
       if (containerRef.current) {
-        containerRef.current.innerHTML = "";
+        containerRef.current.innerHTML = '';
         delete containerRef.current.dataset.loaded;
       }
     };

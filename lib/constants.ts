@@ -80,10 +80,12 @@ export const MARKET_OVERVIEW_WIDGET_CONFIG = {
     {
       title: 'Technology',
       symbols: [
+        { s: 'NASDAQ:SNDK', d: 'SanDisk Corp' },
+        { s: 'NASDAQ:WDC', d: 'Western Digital Corp' },
         { s: 'NASDAQ:AAPL', d: 'Apple' },
         { s: 'NASDAQ:GOOGL', d: 'Alphabet' },
         { s: 'NASDAQ:MSFT', d: 'Microsoft' },
-        { s: 'NASDAQ:FB', d: 'Meta Platforms' },
+        { s: 'NASDAQ:META', d: 'Meta Platforms Inc' },
         { s: 'NYSE:ORCL', d: 'Oracle Corp' },
         { s: 'NASDAQ:INTC', d: 'Intel Corp' },
       ],
@@ -164,7 +166,7 @@ export const MARKET_DATA_WIDGET_CONFIG = {
         { name: 'NASDAQ:AAPL', displayName: 'Apple' },
         { name: 'NASDAQ:GOOGL', displayName: 'Alphabet' },
         { name: 'NASDAQ:MSFT', displayName: 'Microsoft' },
-        { name: 'NASDAQ:FB', displayName: 'Meta Platforms' },
+        { name: 'NASDAQ:META', displayName: 'Meta Platforms Inc' },
         { name: 'NYSE:ORCL', displayName: 'Oracle Corp' },
         { name: 'NASDAQ:INTC', displayName: 'Intel Corp' },
       ],

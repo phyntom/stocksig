@@ -18,7 +18,7 @@ const useTradingViewWidget = (
     script.innerHTML = JSON.stringify(config);
     containerRef.current.appendChild(script);
 
-    () => {
+    return () => {
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
         delete containerRef.current.dataset.loaded;
